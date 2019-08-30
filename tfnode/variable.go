@@ -1,4 +1,4 @@
-package tf
+package tfnode
 
 import "github.com/hashicorp/hcl2/hcl"
 

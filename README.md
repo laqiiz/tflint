@@ -1,20 +1,38 @@
-# tflint
-tflint is developper tools for terraform style check linter.
+# tfpolicy
+tfpolicy is terraform hcl2 file linter that enable to policy as as code 
 
-# Status
+## Status
 
-**Work In Progress**
+**🚧Work In Progress🚧**
 
-# For Example
+## Installation
+
+Install or upgrade tfpolicy with this command.
+
+```bash
+go get -u github.com/laqiiz/tfpolicy
+```
+
+## Usage
+
+```console
+$ tfpolicy --help
+Usage of tfpolicy:
+  -d string
+        d is target directory path (default ".")
+  -dir string
+        dir is target directory path (default ".")
+```
+
+### For Example
 
 ```
-$ go run main.go
+$ tfpolicy <tf file or direcotry>
 2019/04/28 22:57:32 2 errors occurred:
 	* [ERROR] \testdata\example.tf: resource label must match pattern [a-zA-Z]+-[a-zA-Z]+: label='sql',type='mst_db'
 	* [ERROR] \testdata\example.tf: resource label must match pattern [a-zA-Z]+-[a-zA-Z]+: label='sql',type='ope_db'
 ```
 
-# Inspired by
+## License
 
-* CheckStyle
-  * https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml
+This project is licensed under the Apache License 2.0 License - see the [LICENSE](LICENSE) file for details

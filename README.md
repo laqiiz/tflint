@@ -27,7 +27,9 @@ Usage of tfpolicy:
 ### For Example
 
 ```
-$ tfpolicy <tf file or direcotry>
+$ git clone https://github.com/laqiiz/tfpolicy
+$ cd tfpolicy
+$ tfpolicy examples
 2019/04/28 22:57:32 2 errors occurred:
 	* [ERROR] \testdata\example.tf: resource label must match pattern [a-zA-Z]+-[a-zA-Z]+: label='sql',type='mst_db'
 	* [ERROR] \testdata\example.tf: resource label must match pattern [a-zA-Z]+-[a-zA-Z]+: label='sql',type='ope_db'

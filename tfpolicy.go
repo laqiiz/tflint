@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/hashicorp/go-multierror"
 	"github.com/laqiiz/tfpolicy/linter"
+	"github.com/laqiiz/tfpolicy/policy"
 	"github.com/pkg/errors"
 	"io/ioutil"
 	"os"
@@ -49,7 +50,10 @@ func main() {
 		Suffix: []string{".tf", ".tf.json"},
 	}
 
-	err := dirWalk(*dir, filter, linter.Validate)
+	policies := policy.Load("example/policy")
+	lint := linter.Linter{Policies: policies}
+
+	err := dirWalk(*dir, filter, lint.Validate)
 	if err != nil {
 		_, _ = fmt.Fprintf(os.Stderr, "%+v", err)
 	}
